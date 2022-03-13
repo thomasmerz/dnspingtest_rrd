@@ -28,7 +28,7 @@ dnsping_host() {
         }
         END         {print pl ":" rtt}
         '|cut -d"=" -f2)
-    local temp
+    #local temp
     RETURN_VALUE=$temp
 }
 
