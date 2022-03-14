@@ -59,7 +59,9 @@ If you are more cloud-savvy, you could do this also with [Netdata](https://www.n
 * [DNS query monitoring with Netdata](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/dnsquery)
 * [netdata go.d.plugin configuration for dns_query](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/dns_query.conf)
 * [detect dns query failure](https://github.com/netdata/netdata/blob/master/health/health.d/dns_query.conf)
+
 Which gives you this for example:
+
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/18568381/158039823-543e1250-6b93-43c5-8b28-2122ac2588fc.png">
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/18568381/158039834-5aac9521-2ee6-415f-aa17-4108becd203f.png">
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/18568381/158039846-9b340832-38da-4a8a-bd40-580f9878e9ca.png">
