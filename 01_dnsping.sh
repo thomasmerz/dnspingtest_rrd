@@ -3,11 +3,23 @@
 cd ~/dev/dnspingtest_rrd/ || exit 1
 
 PING=/usr/bin/dnsping
-COUNT=4
-DEADLINE=10
+COUNT=4     # higher count = smoother / finer "loss" scale; lower count = less caching effects
+DEADLINE=1  # even 1s (1000ms) is much too long to wait for!
+
+# ---
+# inspired by: https://github.com/gitthangbaby/dnsperftest/blob/patch-1/dnstest_random#L28-L35
+# ---
+# Random domains to choose from
+mapfile -t RANDOM_DOMAINS < <(
+curl -sS https://raw.githubusercontent.com/opendns/public-domain-lists/master/opendns-top-domains.txt
+curl -sS https://raw.githubusercontent.com/opendns/public-domain-lists/master/opendns-random-domains.txt
+)
+# ---
 
 dnsping_host() {
-    output="$($PING -q -c $COUNT -w $DEADLINE -s "$1" heise.de 2>&1)"
+    random_domain=${RANDOM_DOMAINS[$RANDOM % ${#RANDOM_DOMAINS[*]}]};
+    echo "querying $random_domain for $1"
+    output="$($PING -q -c $COUNT -w $DEADLINE -s "$1" "$random_domain" 2>&1)"
     # notice $output is quoted to preserve newlines
     temp=$(echo "$output"| awk '
         BEGIN           {pl=100; rtt=0.1}
