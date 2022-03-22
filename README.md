@@ -16,7 +16,7 @@ vs.
 There are the following scripts that are doing the following:
 
 ```
-01_dnsping.sh
+01_dnsping.sh with optional parameters: random or example.com
 02_dnsping-graph.sh
 98_create_html.sh
 98_create_rrd.sh
@@ -24,8 +24,9 @@ There are the following scripts that are doing the following:
 
 ## 01_dnsping.sh
 Run this script periodically (for example every 5 minutes) via crontab to performance-test some DNS resolvers. All results are written into RRD database(s).  
+You may use `random` domains or specify a domain to be queried if you don't want to use the default (heise.de).  
 
-🚧 You have to check and edit [resolvers](01_dnsping.sh#L45) in this file!
+🚧 You have to check and edit [resolvers](01_dnsping.sh#L76) in this file!
 
 ## 02_dnsping-graph.sh
 Run this script periodically (for example every hour) via crontab to create PNG-chart(s) from results RRD database(s) for hourly/daily/weekly/monthly/yearly charts.
@@ -50,8 +51,7 @@ Run this script once to create rrd-database-files all DNS resolvers that are "co
 ```
 
 ## Examples
-I've uploaded some real-world [examples](examples) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
-If you are also interested in some monitoring data for my [Wireguard](https://github.com/linuxserver/docker-wireguard)-VPN via [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud), please contact me…
+I've uploaded some real-world [examples](examples) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink with a static domain and with random domains for every DNS resolver, and some [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud) in Nuremberg/Germany and Helsinki/Finland) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
 
 
 ## Alternatives
