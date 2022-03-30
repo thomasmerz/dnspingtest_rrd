@@ -1,4 +1,4 @@
-# Purpose of this project
+# DNS-Ping Monitoring
 This project implement a nice monitoring of average response times of DNS resolvers based on [dnsping](https://dnsdiag.org/) in RRD databases and simple HTML pages with PNG graphs. With these information you can decide which DNS resolver to choose for performance reasons.  
 
 ![image](https://user-images.githubusercontent.com/18568381/158039572-d814b991-addc-4953-aa33-9ceb7f513bf4.png)
