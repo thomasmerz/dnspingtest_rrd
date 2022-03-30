@@ -26,22 +26,22 @@ There are the following scripts that are doing the following:
 Run this script periodically (for example every 5 minutes) via crontab to performance-test some DNS resolvers. All results are written into RRD database(s).  
 You may use `random` domains or specify a domain to be queried if you don't want to use the default (heise.de).  
 
-🚧 You have to check and edit [resolvers](01_dnsping.sh#L76) in this file!
+🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/01_dnsping.sh#L76) in this file!
 
 ## 02_dnsping-graph.sh
 Run this script periodically (for example every hour) via crontab to create PNG-chart(s) from results RRD database(s) for hourly/daily/weekly/monthly/yearly charts.
 
-🚧 You have to check and edit [resolvers](02_dnsping-graph.sh#L5) in this file!
+🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/02_dnsping-graph.sh#L5) in this file!
 
 ## 98_create_html.sh
 Run this script once to copy and edit html-files from template for all DNS resolvers that are "configured" in this script.  
 
-🚧 You have to check and edit [resolvers](98_create_html.sh#L3R) in this file!
+🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_html.sh#L3R) in this file!
 
 ## 98_create_rrd.sh
 Run this script once to create rrd-database-files all DNS resolvers that are "configured" in this script.  
 
-🚧 You have to check and edit [resolvers](98_create_rrd.sh#L19) in this file!
+🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_rrd.sh#L19) in this file!
 
 ## Crontab
 ```
@@ -51,7 +51,7 @@ Run this script once to create rrd-database-files all DNS resolvers that are "co
 ```
 
 ## Examples
-I've uploaded some real-world [examples](examples) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink with a static domain and with random domains for every DNS resolver, and some [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud) in Nuremberg/Germany and Helsinki/Finland) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
+I've uploaded some real-world [examples](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/examples) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink with a static domain and with random domains for every DNS resolver, and some [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud) in Nuremberg/Germany and Helsinki/Finland) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
 
 
 ## Alternatives
