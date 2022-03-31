@@ -39,7 +39,7 @@ Run this script once to copy and edit html-files from template for all DNS resol
 🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_html.sh#L3R) in this file!
 
 ## 98_create_rrd.sh
-Run this script once to create rrd-database-files all DNS resolvers that are "configured" in this script.  
+Run this script once to create rrd-database-files for all DNS resolvers that are "configured" in this script.  
 
 🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_rrd.sh#L19) in this file!
 
