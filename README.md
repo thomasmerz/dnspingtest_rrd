@@ -51,7 +51,7 @@ Run this script once to create rrd-database-files for all DNS resolvers that are
 ```
 
 ## Examples
-I've uploaded some real-world [examples](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/examples) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink with a static domain and with random domains for every DNS resolver, and some [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud) in Nuremberg/Germany and Helsinki/Finland) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
+I've uploaded some real-world [examples](https://github.com/thomasmerz/dnspingtest_rrd_ka) from my home-network (Vodafone Gigabit wth 1000 downlink and 50 Mbit uplink with a static domain and with [random domains](https://github.com/thomasmerz/dnspingtest_rrd/tree/main/examples/vodafone_cablemax_1000_karlsruhe.issue_2) for every DNS resolver, and some [Hetzner-Cloudserver](https://www.hetzner.com/de/cloud) in [Nuremberg/Germany](https://github.com/thomasmerz/dnspingtest_rrd_nbg) and [Helsinki/Finland](https://github.com/thomasmerz/dnspingtest_rrd_hel)) monitored via Wifi which is how most devices/gadgets nowadays are connected and what query times they will experience, too. This is much more realistic for home- and end-users than monitoring via a direct connection to DE-CIX. Please watch out for the index-html files.  
 
 
 ## Alternatives
