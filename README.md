@@ -18,30 +18,19 @@ There are the following scripts that are doing the following:
 ```
 01_dnsping.sh with optional parameters: random or example.com
 02_dnsping-graph.sh
-98_create_html.sh
-98_create_rrd.sh
 ```
 
 ## 01_dnsping.sh
 Run this script periodically (for example every 5 minutes) via crontab to performance-test some DNS resolvers. All results are written into RRD database(s).  
 You may use `random` domains or specify a domain to be queried if you don't want to use the default (heise.de).  
-
-🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/01_dnsping.sh#L76) in this file!
+rrd-database-files will be created if missing.  
 
 ## 02_dnsping-graph.sh
 Run this script periodically (for example every hour) via crontab to create PNG-chart(s) from results RRD database(s) for hourly/daily/weekly/monthly/yearly charts.
+html-files will be copied from "template". Please edit them for your purpose.  
 
-🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/02_dnsping-graph.sh#L5) in this file!
-
-## 98_create_html.sh
-Run this script once to copy and edit html-files from template for all DNS resolvers that are "configured" in this script.  
-
-🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_html.sh#L3R) in this file!
-
-## 98_create_rrd.sh
-Run this script once to create rrd-database-files for all DNS resolvers that are "configured" in this script.  
-
-🚧 You have to check and edit [resolvers](https://github.com/thomasmerz/dnspingtest_rrd/blob/main/98_create_rrd.sh#L19) in this file!
+## dnsresolvers.list
+🚧 You have to check and edit this file!  
 
 ## Crontab
 ```
