@@ -1,3 +1,13 @@
+<sup>This project is suitable for:</sup>
+[![Linux](https://svgshare.com/i/Zhy.svg)](https://en.wikipedia.org/wiki/Linux)
+<sup>+</sup>
+[![macOS](https://svgshare.com/i/ZjP.svg)](https://en.wikipedia.org/wiki/MacOS)
+<sup>and has been</sup>
+[![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
+<sup>+</sup>
+[![Vim](https://img.shields.io/badge/--019733?logo=vim)](https://www.vim.org/)
+<sup>+❤️</sup>
+
 # DNS-Ping Monitoring
 This project implement a nice monitoring of average response times of DNS resolvers based on [dnsping](https://dnsdiag.org/) in RRD databases and simple HTML pages with PNG graphs. With these information you can decide which DNS resolver to choose for performance reasons.  
 
