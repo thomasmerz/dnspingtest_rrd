@@ -19,7 +19,7 @@
 # --
 # 5.1.66.255 Freifunk München zensurfrei, DNSSEC
 # 185.150.99.255 Freifunk München zensurfrei, DNSSEC
-# 80.241.218.68 dismail.de
+# 116.203.32.217 dismail.de
 # 159.69.114.157 dismail.de
 # 176.9.93.198 dnsforge.de
 # 176.9.1.117 dnsforge.de
@@ -54,7 +54,7 @@
 194.150.168.168
 5.1.66.255
 185.150.99.255
-80.241.218.68
+116.203.32.217
 159.69.114.157
 176.9.93.198
 176.9.1.117
