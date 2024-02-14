@@ -7,6 +7,7 @@ cd ~/dev/dnspingtest_rrd/ || exit 1
 PING=/usr/bin/dnsping
 COUNT=4     # higher count = smoother / finer "loss" scale; lower count = less caching effects
 DEADLINE=1  # even 1s (1000ms) is much too long to wait for!
+tcp=''
 
 # ---
 # inspired by: https://github.com/gitthangbaby/dnsperftest/blob/patch-1/dnstest_random#L28-L35
@@ -38,7 +39,7 @@ dnsping_host() {
       domain=${domain:=heise.de}
     fi
     echo "querying $domain for $1"
-    output="$($PING -q -c $COUNT -w $DEADLINE -s "$1" "$domain" 2>&1)"
+    output="$($PING "$tcp" -q -c $COUNT -w $DEADLINE -s "$1" "$domain" 2>&1)"
     # notice $output is quoted to preserve newlines
     temp=$(echo "$output"| awk '
         BEGIN           {pl=100; rtt=0.1}
@@ -73,6 +74,11 @@ fi
 resolverlist="$(grep -v ^\# dnsresolvers.list)"
 [ -z "$resolverlist" ] && exit 1
 for resolver in $resolverlist; do
+  if echo "$resolver"|grep -q 'T'; then
+    resolver="$(echo "$resolver"|cut -d "-" -f1)"
+    tcp="-T"
+    echo $resolver $tcp
+  fi
   # create rrd-file from scratch if not existing:
   if ! [ -f data/dnsping_"${resolver}".rrd ]; then
     /usr/bin/rrdtool create data/dnsping_"${resolver}".rrd \

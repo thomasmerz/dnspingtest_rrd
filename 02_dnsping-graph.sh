@@ -12,6 +12,10 @@ resolverlist="$(grep -v ^\# dnsresolvers.list)"
 [ -z "$resolverlist" ] && exit 1
 for resolver in $resolverlist; do
 
+  if echo "$resolver"|grep -q 'T'; then
+    resolver="$(echo "$resolver"|cut -d "-" -f1)"
+  fi
+
   # create html-file from "template" if not existing:
   for file in index_"$resolver"*.html; do
     if [ ! -e "$file" ]; then
