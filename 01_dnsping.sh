@@ -7,7 +7,7 @@ cd ~/dev/dnspingtest_rrd/ || exit 1
 PING=/usr/bin/dnsping
 COUNT=4     # higher count = smoother / finer "loss" scale; lower count = less caching effects
 DEADLINE=1  # even 1s (1000ms) is much too long to wait for!
-tcp=''
+tcp=
 
 # ---
 # inspired by: https://github.com/gitthangbaby/dnsperftest/blob/patch-1/dnstest_random#L28-L35
@@ -39,7 +39,9 @@ dnsping_host() {
       domain=${domain:=heise.de}
     fi
     echo "querying $domain for $1"
-    output="$($PING "$tcp" -q -c $COUNT -w $DEADLINE -s "$1" "$domain" 2>&1)"
+    # Double quote to prevent globbing and word splitting. [SC2086]
+    # shellcheck disable=SC2086
+    output="$($PING $tcp -q -c $COUNT -w $DEADLINE -s "$1" "$domain" 2>&1)"
     # notice $output is quoted to preserve newlines
     temp=$(echo "$output"| awk '
         BEGIN           {pl=100; rtt=0.1}
