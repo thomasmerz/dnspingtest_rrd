@@ -4,7 +4,7 @@
 
 cd ~/dev/dnspingtest_rrd/ || exit 1
 
-PING=/usr/bin/dnsping
+PING=dnsping
 COUNT=4     # higher count = smoother / finer "loss" scale; lower count = less caching effects
 DEADLINE=1  # even 1s (1000ms) is much too long to wait for!
 tcp=
@@ -83,7 +83,7 @@ for resolver in $resolverlist; do
   fi
   # create rrd-file from scratch if not existing:
   if ! [ -f data/dnsping_"${resolver}".rrd ]; then
-    /usr/bin/rrdtool create data/dnsping_"${resolver}".rrd \
+    rrdtool create data/dnsping_"${resolver}".rrd \
       --step 60 \
       DS:pl:GAUGE:600:0:100 \
       DS:rtt:GAUGE:600:0:10000000 \
@@ -99,7 +99,7 @@ for resolver in $resolverlist; do
   # do the dnsping:
   dnsping_host "$resolver"
   # and update rrd:
-  /usr/bin/rrdtool update \
+  rrdtool update \
       data/dnsping_"$resolver".rrd \
       --template \
       pl:rtt \
