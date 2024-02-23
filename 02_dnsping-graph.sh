@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cd ~/dev/dnspingtest_rrd/ || exit 1
 
