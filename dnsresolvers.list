@@ -1,5 +1,6 @@
 # dnsping some hosts for some dns resolvers:
-# 80.69.96.12 = vodafone-extern
+# 80.69.96.12 = vodafone-extern (up to 2024-01-18?)
+# 81.210.129.4 = vodafone-extern (starting at 2024-01-19)
 # 192.168.42.241 = merz-nimbus/localhost ("LAN")
 # 192.168.0.13 = via tp-ax6000-router ("WLAN")
 # dns1.nextdns.io 45.90.28.39
@@ -34,7 +35,7 @@
 # 193.110.81.9 185.253.5.9 DNS0.EU ZERO
 # 76.76.2.38 76.76.2.39 free DNS resolvers to immediately start using 1Hosts
 # --
-80.69.96.12
+81.210.129.4
 45.90.28.39
 45.90.30.39
 45.90.28.241
