@@ -17,7 +17,7 @@ for resolver in $resolverlist; do
   fi
 
   # create html-file from "template" if not existing:
-  for file in index_"$resolver"*.html; do
+  for file in index_"$resolver".html; do
     if [ ! -e "$file" ]; then
       cp -af index_192.168.0.13_pihole_wlan.html index_"$resolver".html
       sed -i "s/192.168.0.13/$resolver/g" index_"$resolver".html
