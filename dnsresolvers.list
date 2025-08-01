@@ -35,9 +35,9 @@
 # 193.110.81.9 185.253.5.9 DNS0.EU ZERO
 # 76.76.2.38 76.76.2.39 free DNS resolvers to immediately start using 1Hosts (Lite/Pro)
 # 185.236.104.104 and 185.236.105.105 = FlashStart Malware- und Inhaltsfilter-Testversion (Private)
-# 86.54.11.1 dns4.eu Protective Resolution
-# 86.54.11.13 dns4.eu Protective + Ad blocking
-# 86.54.11.100 dns4.eu Unfiltered Resolution
+# 86.54.11.1 joindns.eu4 Protective Resolution
+# 86.54.11.13 joindns.eu4 Protective + Ad blocking
+# 86.54.11.100 joindns.eu4 Unfiltered Resolution
 # --
 81.210.129.4
 45.90.28.39
