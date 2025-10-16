@@ -79,7 +79,7 @@ for resolver in $resolverlist; do
   if echo "$resolver"|grep -q 'T'; then
     resolver="$(echo "$resolver"|cut -d "-" -f1)"
     tcp="-T"
-    echo $resolver $tcp
+    ### TODO: why echo this??? --> echo $resolver $tcp
   fi
   # create rrd-file from scratch if not existing:
   if ! [ -f data/dnsping_"${resolver}".rrd ]; then
